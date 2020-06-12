@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@+id/mobile_navigation"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/profileListFragment">
+
+    <fragment
+        android:id="@+id/profileListFragment"
+        android:name="com.sdv.attractgrouptesttask.ui.profile.list.ProfileListFragment"
+        android:label="@string/profile_list"
+        tools:layout="@layout/profile_list_fragment" >
+
+        <action android:id="@+id/action_to_detail_profile"
+            app:destination="@id/profileDetailFragment">
+            <argument
+                android:name="detail_position"
+                app:argType="integer"
+                android:defaultValue="0" />
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileDetailFragment"
+        android:name="com.sdv.attractgrouptesttask.ui.profile.detail.ProfileDetailFragment"
+        android:label="ProfileDetailFragment"
+        tools:layout="@layout/profile_detail_fragment">
+        <argument
+            android:name="detail_position"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
